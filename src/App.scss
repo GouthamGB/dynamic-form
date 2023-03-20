@@ -1,0 +1,218 @@
+$dark-blue:  #004e93;
+$light-blue:  #0075DC;
+
+@mixin buttons {
+  margin-right: 5px;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 5px 20px;
+  border-radius: 3px;
+  border: none;
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+  
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, $dark-blue, $light-blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  color: white;
+}
+
+.main{
+  margin-top: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+
+.tab-menu{
+  width: 200px;
+  display: flex;
+  margin-bottom: 10px;
+
+
+  button{
+    @include buttons;
+  }
+}
+
+
+
+
+.form-container{
+  background-color: white;
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 500px;
+  border-radius: 4px;
+}
+
+form{
+display: flex;
+width: 100%;
+flex-direction: column;
+align-items: flex-start;
+gap:20px;
+
+
+
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  label{
+    width: 70%;
+    text-align: start;
+  }
+
+  span{
+    font-size: 10px;
+  }
+}
+
+
+.input-container{
+  width: 30%;
+  gap: 5px;
+  display: flex;
+  align-items: flex-end;
+}
+
+input, select{
+  width: 90%;
+  max-width: 150px;
+  font-size: 15px;
+  border: 1px solid rgb(137, 137, 137);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.selected{
+  background-color: white !important;
+  color: $dark-blue;
+}
+.unselected{
+  background: linear-gradient(to top, $dark-blue, $light-blue);
+  color: white;
+}
+
+.submit-row{
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#submit{
+  background: linear-gradient(to top, $dark-blue, $light-blue);
+  color: white;
+  @include buttons}
+
+
+  .backdrop{
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+  height: 50%;
+    width: 30%;
+    background-color: white;
+    
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+      margin-bottom: 10px;
+    }
+
+    .data-container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    button{
+      @include buttons;
+      color: $dark-blue;
+    }
+}
+
+
+  @media only screen and (max-width:700px) {
+    .main{
+      
+      margin: 0 !important;
+    }
+   .form-container{
+    width: 90%;
+   }
+
+   .modal{
+    width: 60%;
+   }
+  }
+
+  @media only screen and (max-width:500px) {
+    .main{
+      
+      margin: 0 !important;
+    }
+    
+    .form-container{
+     width: 100%;
+    }
+    
+
+    
+    .row{
+      flex-direction: column;
+      gap:5px;
+
+      label{
+        width: 100%;
+      }
+      
+      .input-container{
+        width: 100%;
+      }
+
+    }
+
+    .modal{
+      width: 80%;
+     }
+   }
