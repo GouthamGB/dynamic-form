@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-
+      <div className='app-container'>
       <div className='main'>
       <div className='tab-menu'>
       <button onClick={handlePage} id='drug1' className={`${currentDrug===drug1?"selected":"unselected"}`}>Drug 1</button>
@@ -84,6 +84,7 @@ function App() {
             </div>
         </form>): null
         }
+      </div>
       </div>
       </div>
       {submitted?<Modal formData={formData} handleClose={handleClose}/>:null}
